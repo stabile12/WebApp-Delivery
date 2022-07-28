@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppDelivery</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <h1>AppDelivery</h1>
+    
+    <div class="contas">
+        <div class="criar">
+            <h3>Se ainda não possui uma conta, crie-a abaixo</h3>
+            <div>
+                <form action="/login/register" method="post">
+                    <label for="">Seu email de usuário:</label><br>
+                    <input name="email" type="email"><br>
+                    <label>Sua senha:</label><br>
+                    <input name="password" type="password"><br>
+                    <label>Repita sua senha:</label><br>
+                    <input type="password" name="repeat"><br>
+                    <button type="submit">Criar</button>
+                </form>
+                
+            </div>
+        </div>
+        <div class="entrar">
+            <h3>Se já possui uma conta, insira seus dados abaixo</h3>
+            <div>
+                <form action="/login/login" method="post">
+                    <label>Seu email de usuário:</label><br>
+                    <input name="email" type="email"><br>
+                    <label>Sua senha:</label><br>
+                    <input type="password" name="password"><br>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="error">
+        <%= error %>
+    </div>
+</body>
+</html>

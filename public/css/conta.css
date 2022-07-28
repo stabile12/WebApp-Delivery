@@ -1,0 +1,10 @@
+body {
+    background: rgb(229, 3, 3);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size: 2em;
+}
