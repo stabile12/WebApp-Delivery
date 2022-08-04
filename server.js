@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const flash = require('connect-flash');
 const routes = require('./routes')
 const path = require('path')
 const mongoose = require('mongoose')
@@ -34,7 +33,6 @@ app.use(session({
   } 
 }));
 app.use(cookieParser());
-app.use(flash())
 app.use(middlewareGlobal); 
 app.listen(3012, () => {
     console.log('acessar http://localhost:3012/login')

@@ -8,3 +8,8 @@ body {
     justify-content:space-between;
     font-size: 2em;
 }
+
+.enderecos {
+    border: 3px solid black;
+    margin: 10px;
+}
