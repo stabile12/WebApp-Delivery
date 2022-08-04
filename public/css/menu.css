@@ -37,7 +37,21 @@ body {
   height: 30px;
 }
 
-.pedido {
-  display: flex;
-  flex-direction: column;
+.nome {
+  width: 100px;
 }
+
+.form {
+  height: 100px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input {
+  height: auto;
+  width: auto;
+}
+

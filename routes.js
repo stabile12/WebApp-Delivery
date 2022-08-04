@@ -4,7 +4,7 @@ const homeController = require('./src/controllers/homeController')
 const loginController = require('./src/controllers/loginController')
 const contaController = require('./src/controllers/contaController')
 const menuController = require('./src/controllers/menuController')
-
+const checkupController = require('./src/controllers/checkupController')
 
 const loginRequired  = require('./src/middlewares/middleware')
  
@@ -18,7 +18,9 @@ route.post('/login/login', loginController.login)
 route.get('/conta', loginRequired.loginRequired, contaController.index )
 route.post('/conta/endereco', contaController.registro)
 
-route.get('/home/menu', menuController.index )
+route.get('/home/menu', menuController.index )  
+route.post('/home/menu/pedido', menuController.escolha)
+
 
 
 module.exports = route

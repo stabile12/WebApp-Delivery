@@ -1,9 +1,13 @@
 const session = require('express-session')
 const Endereco = require('../models/contaModel')
-exports.index = (req, res) => {
+
+exports.index = async (req, res) => {
+    const endereco = new Endereco(req.body)
+    const address = await endereco.readAddress()
     res.render('conta', {
-        email: session.user
-    })
+        email: session.user,
+        address: address
+    }) 
 }
 
 exports.registro = async function(req, res) {
@@ -13,3 +17,4 @@ exports.registro = async function(req, res) {
     await address.registro()
     res.redirect('/conta')
 }
+
