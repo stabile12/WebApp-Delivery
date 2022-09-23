@@ -32,7 +32,7 @@ class Login {
     
     async register() {
         this.valida()
-        if (this.errors.length > 0) return;
+        //if (this.errors.length > 0) return;
         await this.userExist() 
         if (this.errors.length > 0) return;
         
@@ -44,17 +44,17 @@ class Login {
     async userExist() {
         this.user = await LoginModel.findOne({ email: this.body.email });
         if (this.user) {
-            this.errors.push('Usuário já existe ')
+            this.errors.push(' Usuário já existe ')
             console.log('usuário achado')
         } 
     }
 
     valida() {
         if (this.body.password.length < 3 || this.body.password.length > 50) {
-            this.errors.push('A senha precisa ter entre 3 e 50 caracteres')
+            this.errors.push(' A senha precisa ter entre 3 e 50 caracteres ')
         }
         if (this.body.password != this.body.repeat) {
-            this.errors.push('As senhas precisam ser iguais!')
+            this.errors.push(' As senhas precisam ser iguais! ')
         }
         
     }

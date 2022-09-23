@@ -11,23 +11,57 @@
     <header class="header">
         <a class="hover-1" style=" padding: 4px; border: 4px solid black">AppDelivery</a>
         <a class="hover-1" hrf="">Menu</a>
-        <a class="hover-1" href="http://localhost:3011/login"><%=  %></a>
+        <a class="hover-1" href="/conta"><%= email  %></a>
     </header>
     <div class="lista">
         <table>
             <tr class="item">
-                <td class="preco 1">6,50</td>
+                <td class="preco1">5</td>
                 <td><button class="nome 1">Hamburguer</button></td>
             </tr>
             <tr class="item">
-                <td class="preco 2">9,00</td>
+                <td class="preco2">15</td>
                 <td><button class="nome 2">X-Tudo</button></td>
             </tr>
+            <tr class="item">
+                <td class="preco3">10</td>
+                <td><button class="nome 3">X-Salada</button></td>
+            </tr>
+            <tr class="item">
+                <td class="preco4">20</td>
+                <td><button class="nome 4">Fominha</button></td>
+            </tr>
         </table>
-        
     </div>
-    <div class="pedido"></div><br><br>
-    <button class="remove">Limpar Carrinho</button>
-    <script src="/js/menu.js"></script>
+    <div class="finalizacao">
+        <div class="pedidoLista">
+            Itens:<br>
+        </div>
+        <div class="pedidoLista">
+            total:<br>
+            <a class="totalLista"></a>
+        </div>
+    </div>
+    <div >
+        <button type="button" class="remove">Limpar Carrinho</button>
+        <form class="form"  action="/home/menu/pedido" method="post">
+            <input type="hidden" class="input" name="pedido">
+            <input type="hidden" class="total" name="total">
+            <input type="hidden" class="address" name="endereço">
+            <button type="submit" class="enviar">Finalizar Pedido</button>
+        </form>
+    </div>
+    <div class="adressList">
+        Endereços:
+        <% address.forEach(address => { %>
+        <button class="endereco">
+            Rua:    <%=    address.rua %><br>
+            Número: <%=    address.numero %><br>
+            Bairro: <%=    address.bairro %><br>
+        </button>
+        <% }) %>
+    </div>
+       
+    <script src="/js/menu2.js"></script>
 </body>
 </html> 

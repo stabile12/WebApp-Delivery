@@ -25,6 +25,23 @@
             <input type="text" name="bairro">
             <button type="submit">Enviar</button>
         </form>
+        <br>
     </div>
+    <div>
+        Endereços:
+        <% address.forEach(address => { %>
+        <div class="enderecos">
+            Rua:    <%=    address.rua %><br>
+            Número: <%=    address.numero %><br>
+            Bairro: <%=    address.bairro %><br>
+            <form method="post" action="/conta/editar">
+                <input type="hidden" value="<%=address.id%>" name="id">
+                <button type="submit" href="/conta/editar">Editar</button>
+            </form>
+            
+        </div>
+        <% }) %> 
+    </div>
+    <a href="/logout">logout</a>
 </body>
 </html>

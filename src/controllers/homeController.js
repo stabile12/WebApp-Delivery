@@ -3,5 +3,4 @@ exports.home = (req, res, next) => {
     res.render('home', {
         email: session.user
     })
-    console.log(session)
 }

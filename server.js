@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const flash = require('connect-flash');
 const routes = require('./routes')
 const path = require('path')
 const mongoose = require('mongoose')
@@ -8,7 +7,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cookieParser = require("cookie-parser");
 const connectionString = 'mongodb+srv://estabile12:estabile123@app.tbdzgyv.mongodb.net/?retryWrites=true&w=majority'
-const {middlewareGlobal} = require('./src/middlewares/middleware')
+
 mongoose.connect(connectionString)
 .then (() => {
     console.log('conectado à base de dados')
@@ -29,13 +28,11 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60,
     httpOnly: false
   } 
 }));
 app.use(cookieParser());
-app.use(flash())
-app.use(middlewareGlobal); 
 app.listen(3012, () => {
     console.log('acessar http://localhost:3012/login')
 })

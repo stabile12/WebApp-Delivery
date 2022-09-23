@@ -19,6 +19,20 @@ class Endereco {
     async registro() {
         this.address = await AddressModel.create(this.body)
     }
+
+    async readAddress() {
+        const address = await AddressModel.find({user: session.user})
+        return address;
+    }
+
+    async show(id) {
+        const address = await AddressModel.findById(id)
+        return address
+    }   
+
+    async editar(id) {
+         this.address = await AddressModel.findByIdAndUpdate(id , this.body, {new: true})
+    }
 }
 
 module.exports = Endereco

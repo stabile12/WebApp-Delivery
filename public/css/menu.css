@@ -37,7 +37,26 @@ body {
   height: 30px;
 }
 
-.pedido {
+.nome {
+  width: 100px;
+}
+
+.finalizacao {
+  
+  break-inside: auto;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 300px;
+  text-align: center;
 }
+
+.pedidoLista {
+  position: relative;
+  left: 50%;
+}
+
+
+
